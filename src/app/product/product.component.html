@@ -1,0 +1,19 @@
+<div class="row">
+  <!--products 与 product.components.ts文件的products是一致的
+  ngfor是指循环这个属性， 每次循环的元素，放在product这个变量中-->
+  <div *ngFor="let product of products" class="col-md-4 col-sm-4 col-lg-4">
+    <!--根据product数量生成相应数量的下面的一段的代码-->
+    <div class="card">
+      <img class="card-img-top" src="http://placehold.it/320x150" alt="Card image cap">
+      <div class="card-body">
+        <h4 class="card-title text-right">{{product.price}}元</h4>
+        <h4><a>{{product.title}}</a></h4>
+        <p class="card-text">{{product.desc}}</p>
+      </div>
+      <div>
+        <!--星级评价的这个rating属性由当前产品的rating属性传递进去-->
+        <app-stars [rating]="product.rating"></app-stars>
+      </div>
+    </div>
+  </div>
+</div>

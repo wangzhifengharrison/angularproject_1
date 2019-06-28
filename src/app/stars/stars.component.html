@@ -1,0 +1,8 @@
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
+
+<p>
+  <!--由star决定class样式-->
+  <span *ngFor="let star of stars" class="glyphicon glyphicon-star"
+        [class.glyphicon-star-empty]="star"></span>
+  <span>{{rating}}星</span>
+</p>
