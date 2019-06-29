@@ -8,7 +8,15 @@ import { SearchComponent } from './search/search.component';
 import { CarouselComponent } from './carousel/carousel.component';
 import { ProductComponent } from './product/product.component';
 import { StarsComponent } from './stars/stars.component';
+import { ProductDetailComponent } from './product-detail/product-detail.component';
+import { HomeComponent } from './home/home.component';
+import {RouterModule, Routes} from '@angular/router';
+import {FormsModule} from '@angular/forms';
 
+const routeConfig: Routes = [
+  {path: '', component: HomeComponent},
+  {path: 'product/:prodTitle', component: ProductDetailComponent}
+]
 @NgModule({
   // 只能申明主键
   declarations: [
@@ -18,11 +26,16 @@ import { StarsComponent } from './stars/stars.component';
     SearchComponent,
     CarouselComponent,
     ProductComponent,
-    StarsComponent
+    StarsComponent,
+    ProductDetailComponent,
+    HomeComponent
   ],
   // 必须选择， 表单模块， http模块
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule,
+    RouterModule.forRoot(routeConfig)
+
   ],
   // 只能申明服务
   providers: [],
