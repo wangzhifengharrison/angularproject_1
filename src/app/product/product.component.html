@@ -1,7 +1,17 @@
+<!--输入块-->
+<div class="row">
+  <div class="col-sm-12">
+    <div class="form-group">
+      <input class="form-control" placeholder="please inout the brand name"
+      [formControl]="titleFilter">
+    </div>
+  </div>
+</div>
+<!--这个是-->
 <div class="row">
   <!--products 与 product.components.ts文件的products是一致的
   ngfor是指循环这个属性， 每次循环的元素，放在product这个变量中-->
-  <div *ngFor="let product of products" class="col-md-4 col-sm-4 col-lg-4">
+  <div *ngFor="let product of products | filter: 'title':keyword" class="col-md-4 col-sm-4 col-lg-4">
     <!--根据product数量生成相应数量的下面的一段的代码-->
     <div class="card">
       <img class="card-img-top" src="http://placehold.it/320x150" alt="Card image cap">
