@@ -18,7 +18,23 @@
 
 
 <div class="well">
+
+  <div>
+    <button class="btn btn-success" (click)="isCommentHidder=!isCommentHidder">
+      submit your comment
+    </button>
+  </div>
+  <div [hidden]="isCommentHidder">
+    <div><app-stars [(rating)]="newRating" [readonly]="false"></app-stars></div>
+    <div>
+      <textarea [(ngModel)]="newComment"></textarea>
+    </div>
+    <div>
+      <button class="btn" (click)="addComment()"> submit form</button>
+    </div>
+  </div>
   <div class="row" *ngFor="let comment of comments">
+    <hr>
     <hr>
     <div class="col-md-12">
       <app-stars [rating]="comment.rating"></app-stars>
