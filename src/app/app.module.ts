@@ -12,10 +12,11 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
 import { HomeComponent } from './home/home.component';
 import {RouterModule, Routes} from '@angular/router';
 import {FormsModule} from '@angular/forms';
+import {ProductService} from './shared/product.service';
 
 const routeConfig: Routes = [
   {path: '', component: HomeComponent},
-  {path: 'product/:prodTitle', component: ProductDetailComponent}
+  {path: 'product/:productId', component: ProductDetailComponent}
 ]
 @NgModule({
   // 只能申明主键
@@ -38,7 +39,7 @@ const routeConfig: Routes = [
 
   ],
   // 只能申明服务
-  providers: [],
+  providers: [ProductService],
   // bootstrap
   bootstrap: [AppComponent]
 })
