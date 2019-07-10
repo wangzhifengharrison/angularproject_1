@@ -14,11 +14,15 @@ export class ProductDetailComponent implements OnInit {
   newComment: string = "";
   isCommentHidder = true;
 
+  firstone = true;
+
   constructor(private routeInfo: ActivatedRoute,
               private productService: ProductService
               ) { }
 
   ngOnInit() {
+    // this.test();
+
     let productId: number = this.routeInfo.snapshot.params["productId"];
     this.product = this.productService.getProduct(productId);
     this.comments = this.productService.getCommentsForProductId(productId);
